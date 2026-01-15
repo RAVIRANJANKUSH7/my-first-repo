@@ -1,0 +1,51 @@
+package day1;
+
+public class Hello {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 System.out.println("Hello, Java World!");
+
+	}
+
+}
+
+
+
+
+
+package day1;
+
+public class HelloWithCom {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// HelloJava.java
+		// This program demonstrates a simple Java program
+		// that compiles and executes successfully.
+
+		        // Printing a welcome message
+		        System.out.println("Hello, Java World!");
+
+		        // Printing student details
+		        System.out.println("Name: Student");
+		        System.out.println("Course: Java Programming");
+
+		        // Confirmation message
+		        System.out.println("Status: Program compiled and executed successfully.");
+		    }
+		
+
+	}
+
+
+
+
+
+
+C:\Users\Ravi\eclipse-workspace\Javainternship\src\day1>javac Hello.java
+
+C:\Users\Ravi\eclipse-workspace\Javainternship\src\day1>java Hello.java
+Hello, Java World!
+
+C:\Users\Ravi\eclipse-workspace\Javainternship\src\day1>
