@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+
+        // Scanner object for user input
+        Scanner sc = new Scanner(System.in);
+
+        int choice;
+        double num1, num2, result;
+
+        // Loop runs until user chooses Exit
+        do {
+            // Display menu
+            System.out.println("\n===== Simple Calculator =====");
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+
+            choice = sc.nextInt();
+
+            // Exit condition
+            if (choice == 5) {
+                System.out.println("Calculator Closed. Thank you!");
+                break;
+            }
+
+            // Input numbers
+            System.out.print("Enter first number: ");
+            num1 = sc.nextDouble();
+
+            System.out.print("Enter second number: ");
+            num2 = sc.nextDouble();
+
+            // Perform operation using switch
+            switch (choice) {
+                case 1:
+                    result = num1 + num2;
+                    System.out.println("Result = " + result);
+                    break;
+
+                case 2:
+                    result = num1 - num2;
+                    System.out.println("Result = " + result);
+                    break;
+
+                case 3:
+                    result = num1 * num2;
+                    System.out.println("Result = " + result);
+                    break;
+
+                case 4:
+                    // Check division by zero
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        System.out.println("Result = " + result);
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+
+        } while (true);
+
+        // Close scanner
+        sc.close();
+    }
+}
