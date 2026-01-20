@@ -1,3 +1,6 @@
+1. Modular calculator program
+
+
 import java.util.Scanner;
 
 public class ModularCalculator {
@@ -65,6 +68,8 @@ public class ModularCalculator {
     }
 }
 
+
+2. Method documentation comments
 
 /**
  * This class performs basic calculator operations.
