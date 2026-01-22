@@ -1,0 +1,128 @@
+Question 1  Data analysis console app
+
+// DataAnalysisApp.java
+// Console-based application to demonstrate array operations
+
+import java.util.Scanner;
+
+public class DataAnalysisApp {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // -----------------------------
+        // 1. Single Dimensional Array
+        // -----------------------------
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+
+        // -----------------------------
+        // 2. Sum, Average, Max, Min
+        // -----------------------------
+        int sum = 0;
+        int max = numbers[0];
+        int min = numbers[0];
+
+        for (int i = 0; i < n; i++) {
+            sum += numbers[i];
+
+            if (numbers[i] > max)
+                max = numbers[i];
+
+            if (numbers[i] < min)
+                min = numbers[i];
+        }
+
+        double average = (double) sum / n;
+
+        // -----------------------------
+        // 3. Sorting (Bubble Sort)
+        // -----------------------------
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                }
+            }
+        }
+
+        // -----------------------------
+        // 4. Multi-dimensional Array
+        // -----------------------------
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+
+        // -----------------------------
+        // 5. Exception Handling Demo
+        // -----------------------------
+        try {
+            System.out.println("\nAccessing invalid index:");
+            System.out.println(numbers[100]); // Error
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception Handled: " + e);
+        }
+
+        // -----------------------------
+        // 6. Display Results
+        // -----------------------------
+        System.out.println("\n------ DATA ANALYSIS RESULT ------");
+
+        System.out.print("Sorted Array: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+
+        System.out.println("\nSum = " + sum);
+        System.out.println("Average = " + average);
+        System.out.println("Maximum = " + max);
+        System.out.println("Minimum = " + min);
+
+        System.out.println("\n2D Array Elements:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+Question 2
+
+
+  Enter number of elements: 5
+Enter 5 numbers:
+10
+25
+5
+40
+15
+
+Accessing invalid index:
+Exception Handled: java.lang.ArrayIndexOutOfBoundsException: Index 100 out of bounds
+
+------ DATA ANALYSIS RESULT ------
+Sorted Array: 5 10 15 25 40 
+Sum = 95
+Average = 19.0
+Maximum = 40
+Minimum = 5
+
+2D Array Elements:
+1 2 3
+4 5 6
